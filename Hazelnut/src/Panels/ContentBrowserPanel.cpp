@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "ContentBrowserPanel.h"
 
-#include <imgui/imgui.h>
+#include <imgui.h>
 
 namespace Hazel {
 
@@ -57,7 +57,7 @@ namespace Hazel {
 			}
 
 			ImGui::PopStyleColor();
-			if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
+			if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(ImGuiMouseCursor_Arrow))
 			{
 				if (directoryEntry.is_directory())
 					m_CurrentDirectory /= path.filename();

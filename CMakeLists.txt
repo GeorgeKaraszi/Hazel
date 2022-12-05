@@ -15,4 +15,7 @@ conan_cmake_run(
 
 add_subdirectory(Hazel/vendor/imgui)
 add_subdirectory(Hazel/vendor/ImGuizmo)
+add_subdirectory(Hazel/vendor/stb_image)
 add_subdirectory(Hazel)
+add_subdirectory(Hazelnut)
+add_subdirectory(Sandbox)

@@ -3,8 +3,8 @@
 
 #include "Hazel/Scripting/ScriptEngine.h"
 
-#include <imgui/imgui.h>
-#include <imgui/imgui_internal.h>
+#include <imgui.h>
+#include <imgui_internal.h>
 
 #include <glm/gtc/type_ptr.hpp>
 
@@ -78,7 +78,7 @@ namespace Hazel {
 		auto& tag = entity.GetComponent<TagComponent>().Tag;
 		
 		ImGuiTreeNodeFlags flags = ((m_SelectionContext == entity) ? ImGuiTreeNodeFlags_Selected : 0) | ImGuiTreeNodeFlags_OpenOnArrow;
-		flags |= ImGuiTreeNodeFlags_SpanAvailWidth;
+		flags |= ImGuiTreeNodeFlags_FramePadding;
 		bool opened = ImGui::TreeNodeEx((void*)(uint64_t)(uint32_t)entity, flags, tag.c_str());
 		if (ImGui::IsItemClicked())
 		{
@@ -96,7 +96,7 @@ namespace Hazel {
 
 		if (opened)
 		{
-			ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_SpanAvailWidth;
+			ImGuiTreeNodeFlags flags = ImGuiTreeNodeFlags_OpenOnArrow | ImGuiTreeNodeFlags_FramePadding;
 			bool opened = ImGui::TreeNodeEx((void*)9817239, flags, tag.c_str());
 			if (opened)
 				ImGui::TreePop();
@@ -180,7 +180,7 @@ namespace Hazel {
 	template<typename T, typename UIFunction>
 	static void DrawComponent(const std::string& name, Entity entity, UIFunction uiFunction)
 	{
-		const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_SpanAvailWidth | ImGuiTreeNodeFlags_AllowItemOverlap | ImGuiTreeNodeFlags_FramePadding;
+		const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_Framed | ImGuiTreeNodeFlags_FramePadding | ImGuiTreeNodeFlags_AllowItemOverlap | ImGuiTreeNodeFlags_FramePadding;
 		if (entity.HasComponent<T>())
 		{
 			auto& component = entity.GetComponent<T>();
