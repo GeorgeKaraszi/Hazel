@@ -3,11 +3,11 @@ spdlog/1.10.0
 glad/0.1.36
 glfw/3.3.8
 glm/cci.20220420
-stb/cci.20210910
 glew/2.2.0
 sdl/2.24.0
 box2d/2.4.1
 yaml-cpp/0.6.3
+spirv-cross/1.3.216.0
 
 [options]
 spdlog:header_only=False
@@ -21,6 +21,7 @@ sdl:shared=False
 glew:shared=False
 box2d:shared=False
 yaml-cpp:shared=False
+spirv-cross:shared=False
 
 
 [generators]
