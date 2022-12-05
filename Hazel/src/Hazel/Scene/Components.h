@@ -16,8 +16,8 @@ namespace Hazel {
 	{
 		UUID ID;
 
-		IDComponent() = default;
-		IDComponent(const IDComponent&) = default;
+//		IDComponent() = default;
+//		IDComponent(const IDComponent&) = default;
 	};
 
 	struct TagComponent
